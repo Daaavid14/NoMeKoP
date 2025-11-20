@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Legacy</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="shortcut icon" href="backgrounds/pokemon-ball.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/backgrounds/nomekop.png" alt="game logo">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#" id="navHome">Home</a></li>
+            <li><a href="#" id="navMarketplace">Marketplace</a></li>
+            <li><a href="#">Collection</a></li>
+            <li><a href="#">Whitepaper</a></li>
+        </ul>
+
+        <button id="connectWalletBtn" class="wallet-btn">CONNECT WALLET</button>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <header class="hero" id="homeSection">
+
+        <div class="hero-left">
+            <img src="assets/sprites.png" alt="Pokemon Group">
+        </div>
+
+        <div class="hero-center">
+            <h1 class="title">NOMEKOP</h1>
+            <h1 class="title">BEQUEST</h1>
+            <div class="hero-buttons">
+                <a href="lobby.html">
+                    <button class="btn play">PLAY GAMES</button>
+                </a>
+            </div>
+            <p class="sub-text">Catch • Train • Battle • Trade</p>
+        </div>
+
+        <div class="hero-right">
+            <img src="assets/kind1.png" alt="Trainer Red">
+        </div>
+
+    </header>
+
+    <!-- ================= MARKETPLACE (HIDDEN BY DEFAULT) ================= -->
+    <section id="marketplaceSection" class="market-container" style="display:none;">
+        <h1 class="section-title">Marketplace</h1>
+        <div id="marketGrid" class="grid"></div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>© 2025 Nomekop Bequest. All rights reserved.</p>
+    </footer>
+
+    <!-- Ethers (v6) -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.8.1/dist/ethers.umd.min.js"></script>
+
+    <!-- Blockchain config (your addresses & spriteBaseURL) -->
+    <script src="/script/blockchain-config.js"></script>
+
+    <!-- Web3 client (wraps ethers and contract helpers) -->
+    <script src="script/web3.js"></script>
+
+    <!-- Marketplace on-chain helpers (wraps Web3Client calls) -->
+    <script src="script/marketplaces.js"></script>
+
+    <!-- UI code: marketplace toggling + rendering -->
+    <script src="/script/marketplace.js"></script>
+
+    <!-- Higher-level app logic: connect wallet, load on-chain listings, buy/list handlers -->
+    <script src="/script/homepage.js"></script>
+
+    <script src="script/chain-listings.js"></script>
+
+    <!-- Optional: battle matchmaking -->
+    <script src="script/battle.js"></script>
+
+
+</body>
+</html>
