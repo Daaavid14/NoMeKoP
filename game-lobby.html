@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Game Lobby — Nomekop Bequest</title>
+  <link rel="stylesheet" href="game-lobby.css" />
+</head>
+<body>
+  <!-- Background image uses your uploaded file path -->
+  <div class="bg-image" role="img" aria-label="game lobby background"></div>
+
+  <header class="top-bar">
+    <div class="profile">
+      <img class="avatar" src="" alt="avatar">
+      <div class="profile-info">
+        <div class="username">Trainer#001</div>
+        <div class="level">Lv. 15</div>
+      </div>
+    </div>
+
+    <div class="top-center">
+      <div class="title">Nomekop Bequest</div>
+    </div>
+
+    <div class="top-right">
+      <div class="currency">
+        <div class="coin">₽ <span class="coin-amount">1,234</span></div>
+        <div class="gems">☆ <span class="gems-amount">12</span></div>
+      </div>
+      <button class="btn small">Settings</button>
+      <button class="btn small">Help</button>
+    </div>
+  </header>
+
+  <main class="lobby">
+    <section class="top-widgets">
+      <div class="widget shop">
+        <div class="widget-title">Shop</div>
+        <div class="widget-body">Buy potions, skins & more</div>
+      </div>
+
+      <div class="widget quests">
+        <div class="widget-title">Daily Quests</div>
+        <div class="widget-body">3/5 complete</div>
+      </div>
+
+      <div class="widget friends">
+        <div class="widget-title">Friends</div>
+        <div class="widget-body">12 online</div>
+      </div>
+    </section>
+
+    <section class="battle-row">
+      <!-- Creature cards: can be duplicated and filled dynamically -->
+      <div class="creature-card">
+        <div class="creature-image">
+          <img src="" alt="creature 1">
+        </div>
+      </div>
+
+      <div class="creature-card center">
+        <div class="creature-image">
+          <img src="" alt="creature 2">
+        </div>
+      </div>
+
+      <div class="creature-card">
+        <div class="creature-image">
+          <img src="" alt="creature 3">
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-area">
+      <div class="cta-left">
+        <div class="info-card">
+          <h3>Team Power</h3>
+          <p>Power: <strong>365</strong></p>
+          <p>Rank: <strong>Silver</strong></p>
+        </div>
+      </div>
+
+      <div class="cta-right">
+         <div class="cta-center">
+          <button class="btn play-btn">PLAY</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="main navigation">
+    <button class="nav-item">
+      <span class="icon">🐾</span>
+      <span class="label">Teams</span>
+    </button>
+
+    <button class="nav-item">
+      <span class="icon">🎒</span>
+      <span class="label">Inventory</span>
+    </button>
+
+    <button class="nav-item">
+      <span class="icon">📚</span>
+      <span class="label">Collection</span>
+    </button>
+
+    <button class="nav-item">
+      <span class="icon">⚒️</span>
+      <span class="label">Craft</span>
+    </button>
+  </nav>
+
+  <!-- === MATCHMAKING OVERLAY === -->
+  <div id="match-overlay" class="overlay hidden">
+    <div class="match-container">
+      <h1>Finding Match...</h1>
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <!-- === VS OVERLAY === -->
+  <div id="vs-overlay" class="overlay hidden">
+    <div class="vs-container">
+      <div class="team team-left">
+        <img src="pokeSprites/charizard.gif" />
+        <img src="pokeSprites/blastoise.gif" />
+        <img src="pokeSprites/venusaur.gif" />
+      </div>
+
+      <div class="vs-text">VS</div>
+
+      <div class="team team-right">
+        <img src="pokeSprites/pikachu.gif" />
+        <img src="pokeSprites/snorlax.gif" />
+        <img src="pokeSprites/gengar.gif" />
+      </div>
+    </div>
+  </div>
+
+  <!-- === BATTLE SCREEN === -->
+  <div id="battle-screen" class="overlay hidden">
+    <canvas id="battle-canvas"></canvas>
+  </div>
+
+  <!-- Small accessibility helpers -->
+  <div class="sr-only" aria-hidden="false">Lobby loaded. Use Play to start a match.</div>
+  
+</body>
+</html>
