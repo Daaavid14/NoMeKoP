@@ -462,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const findMatchBtn = document.getElementById("find-match");
     const pokeSprites = document.getElementById("poke-sprites");
-    const achievements = document.getElementById("achievements");
+    const collections = document.getElementById("collections");
     const settingsBtn = document.getElementById("settings");
 
     const audioPanel = document.getElementById("audioSettingsPanel");
@@ -570,9 +570,9 @@ document.addEventListener("DOMContentLoaded", () => {
         loadAllSprites();
     });
 
-    achievements.addEventListener("click", (e) => {
+    collections.addEventListener("click", (e) => {
         e.preventDefault();
-        showStatus("🏆 Opening Achievements...");
+        showStatus("🏆 Opening Collections...");
     });
 
     document.getElementById("fullscreenToggle").addEventListener("click", () => {
