@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="design/lobby.css" />
+    <link rel="stylesheet" href="css/lobby.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="shortcut icon" href="backgrounds/pokemon-ball.png" type="image/x-icon">
     <title>Nomekop Game</title>
@@ -11,7 +11,7 @@
 </head>
 <body>
     <section>
-        <div class="top-bar">
+        <div class="top-bar topBar" id="topBar">
             <div class="profile">
                 <img class="avatar" src="assets/pika.png" alt="avatar">
                 <div class="profile-info">
@@ -38,32 +38,35 @@
                 <div id="spritesContainer" class="sprites-grid"></div>
             </div>
         </div>
-
         
         
         <div class="buttons">
             <div class="btns play-btn">
-                <a href="#" id="find-match">Play</a>
+                <a href="#" id="find-match">⚔️ Play</a>
             </div>    
             <div class="btns">
                 <span class="icon">🐾</span>
                 <a href="#" id="poke-sprites">Sprites</a>
             </div>
             <div class="btns">
-                <span class="icon">📚</span>
-                <a href="#" id="collections">Collections</a>
+                <span class="icon">🥇</span>
+                <a href="#" id="achievements">Achievements</a>
             </div>
             <div class="btns">
                 <span class="icon">🏆</span>
                 <a href="#" id="leaderboards">Leaderboards</a>
             </div>
             <div class="btns">
-                <span class="icon">🎒</span>
+                <span class="icon">💼</span>
                 <a href="#" id="inventory">Inventory</a>
             </div>
             <div class="btns">
                 <span class="icon">⚒️</span>
                 <a href="#" id="craft">Craft</a>
+            </div>
+            <div class="btns team-power">
+                <span class="power">150</span>
+                <a href="#">Team Power</a>
             </div>
         </div>
 
@@ -136,7 +139,7 @@
                 <div id="vsSparks" class="vs-sparks" aria-hidden="true"></div>
                 <div id="vsImpact" class="vs-impact" aria-hidden="true"></div>
 
-                <audio id="vsSound" src="audio-track/pokemon-battle.mp3"></audio>
+                <audio id="vsSound" src="audio-track/pokemon-battle.mp3" loop></audio>
             </div>
         </div>
 
@@ -221,7 +224,7 @@
     <audio id="victorySound" src="audio-track/victory-theme.mp3"></audio>
     <audio id="defeatSound" src="audio-track/defeat-theme.mp3"></audio> 
 
-
+    <script src="script/pokemonData.js"></script>
     <script src="script/lobby.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>

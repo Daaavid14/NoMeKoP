@@ -16,7 +16,7 @@
 .buttons {
   position: absolute;
   bottom: 5%;
-  left: 43%;
+  left: 45%;
   transform: translateX(-50%);
   z-index: 3;
   display:flex;
@@ -587,9 +587,11 @@ a, button {
 .vs-overlay {
     position: fixed;
     inset: 0;
-    background: black;
     z-index: 9000;
     visibility: hidden;
+    background: url("/backgrounds/versus.jpg") no-repeat center;
+    background-size: cover;
+    overflow: hidden;
     opacity: 0;
     transition: opacity .25s ease, visibility .25s;
 }
@@ -603,9 +605,6 @@ a, button {
     width: 100%;
     height: 100%;
     position: relative;
-    background: url("versus.jpg") no-repeat center;
-    background-size: cover;
-    overflow: hidden;
 }
 
 .vs-energy {
@@ -966,11 +965,10 @@ a, button {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 14px 20px;
+  padding: 5px 15px;
   background: linear-gradient(#fb8722, #ff7b1d);
   border-radius: 0 0 20px 20px;
   border: 4px solid #ff6f00;
-  padding: 14px 40px;
   font-size: 28px;  
   font-weight: 900;
   color: white;
@@ -1030,8 +1028,12 @@ a, button {
   border-radius: 10px; 
 }
 
+.btn.small:hover { 
+  transform: scale(1.3);
+}
+
 /*========================================
-    AXIE-STYLE BOTTOM NAV BAR
+               PLAY BUTTON
 ========================================*/
 
 .play-btn {
@@ -1039,6 +1041,7 @@ a, button {
   bottom: 20%;
   right: -300px;
   border-radius: 15px;
+  font-size: 40px;
   color: #fff;
   border: none;
   letter-spacing: 5px;
@@ -1059,3 +1062,50 @@ a, button {
 .play-btn:hover {
   transform: scale(1.1);
 }
+
+.team-power {
+  position: absolute;
+  bottom: 0;
+  left: -200px;
+  height: 100%;
+  z-index: 3;
+  display:flex;
+  background: rgba(0,0,0,0.45);
+  border-radius: 20px;
+  padding: 5px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.team-power:hover {
+  transform: scale(1.02);
+  transition: ease-in-out;
+  box-shadow: 0 6px 30px rgba(255,255,255,0.03); 
+}
+
+.power {
+  font-size: 30px;
+  color: white;
+  font-weight: 600;
+}
+
+
+/* PLAYER – face right (normal) */
+#playerSprite {
+    transform: scaleX(-1);
+}
+
+/* ENEMY – flip horizontally to face the player */
+#oppSprite {
+    transform: scaleX(1);
+}
+
+/* VS Overlay sprites also face correctly */
+#vsPlayerSprite {
+    transform: scaleX(-1);
+}
+
+#vsOppSprite {
+    transform: scaleX(1);
+}
+

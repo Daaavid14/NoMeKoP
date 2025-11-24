@@ -3,22 +3,49 @@
 */
 
 const spriteFiles = [
-    "Abomasnow_Female.gif",
-    "Abomasnow_Mega.gif",
-    "Abra.gif",
-    "Absol.gif",
-    "Absol_Mega.gif",
-    "Accelgor.gif",
-    "Aegislash_Blade.gif",
-    "Aerodactyl.gif",
-    "Aggron.gif",
-    "Aipom.gif",
-    "Alakazam.gif",
-    "Alomomola.gif",
-    "Altaria.gif",
-    "Ambipom.gif",
-    "Amoonguss.gif",
-    "Ampharos_Mega.gif"
+"Abomasnow_Mega.gif",
+"Aerodactyl_Mega.gif",
+"Aggron_Mega.gif",
+"Alakazam_Mega.gif",
+"Altaria_Mega.gif",
+"Ampharos_Mega.gif",
+"Audino_Mega.gif",
+"Banette_Mega.gif",
+"Beedrill_Mega.gif",
+"Blastoise_Mega.gif",
+"Blaziken_Mega.gif",
+"Camerupt_Mega.gif",
+"Charizard_MegaY.gif",
+"Diancie_Mega.gif",
+"Gallade_Mega.gif",
+"Garchomp_Mega.gif",
+"Gardevoir_Mega.gif",
+"Gengar_Mega.gif",
+"Glalie_Mega.gif",
+"Gyarados_Mega.gif",
+"Houndoom_Mega.gif",
+"Heracross_Mega.gif",
+"Kangaskhan_Mega.gif",
+"Latios_Mega.gif",
+"Lopunny_Mega.gif",
+"Lucario_Mega.gif",
+"Manectric_Mega.gif",
+"Mawile_Mega.gif",
+"Medicham_Mega.gif",
+"Meganium.gif",
+"Metagross_Mega.gif",
+"Mewtwo_MegaX.gif",
+"Pidgeot_Mega.gif",
+"Pinsir_Mega.gif",
+"Sceptile_Mega.gif",
+"Sableye_Mega.gif",
+"Scizor_Mega.gif",
+"Sharpedo_Mega.gif",
+"Swampert_Mega.gif",
+"Steelix_Mega.gif",
+"Tyranitar_Mega.gif",
+"Venusaur_Mega.gif",
+"Rayquaza_Mega.gif"
 
 ];
 
@@ -74,7 +101,7 @@ const MatchClient = (function(){
                 if (cancelled) {
                     clearInterval(tickInterval);
                 } else {
-                    onSearching && onSearching(`Searching... ${ticks * 2}s`);
+                    onSearching && onSearching(`Searching... ${ticks * 1}s`);
                 }
             }, 1000);
 
@@ -103,113 +130,91 @@ const MatchClient = (function(){
 })();
 
 function createBattle(playerSpriteFile, opponent) {
-    window.lastOpponentUsed = opponent;
 
-    const state = {
-        maxHP: 100,
-        playerHP: 100,
-        oppHP: 100,
-        energy: 5,
-        maxEnergy: 10,
-        turn: "player",
-        running: true
-    };
-
-    const skills = [
-        { name: "Quick Hit", dmg: 15, cost: 1 },
-        { name: "Focused Strike", dmg: 25, cost: 2 },
-        { name: "Gale Jab", dmg: 30, cost: 3 },
-        { name: "Primal Burst", dmg: 55, cost: 5, ultimate: true }
-    ];
-
-    const oppSprite = document.getElementById("oppSprite");
-    const playerSprite = document.getElementById("playerSprite");
-
-    const oppHPBar = document.getElementById("oppHP");
-    const playerHPBar = document.getElementById("playerHP");
-
-    const oppHPText = document.getElementById("oppHPText");
-    const playerHPText = document.getElementById("playerHPText");
-
-    const skillCards = document.getElementById("skillCards");
-    const energyDots = document.getElementById("energyDots");
-    const energyCount = document.getElementById("energyCount");
-
-    const skipTurnBtn = document.getElementById("skipTurnBtn");
-    const forfeitBtn = document.getElementById("forfeitBtn");
+    //////////////////////////////////////////////////////////////
+    // 3v3 ROUND ROBIN AXIE STYLE BATTLE WITH ENERGY SYSTEM
+    //////////////////////////////////////////////////////////////
 
     const battleOverlay = document.getElementById("battleOverlay");
-    const damageLayer = document.getElementById("damageLayer");
+    battleOverlay.setAttribute("aria-hidden", "false");
 
-    document.getElementById("playerSprite").src = `pokeSprites/${playerSpriteFile}`;
-    document.getElementById("oppSprite").src = `pokeSprites/${opponent.sprite}`;
+    // ====== 3 Pokémon per team ======
+    const playerTeam = [
+        { sprite: spriteFiles[0], maxHP: 120, hp: 120 },
+        { sprite: spriteFiles[1], maxHP: 120, hp: 120 },
+        { sprite: spriteFiles[2], maxHP: 120, hp: 120 }
+    ];
 
-    battleOverlay.setAttribute("aria-hidden","false");
+    const enemyTeam = [
+        { sprite: opponent.sprite, maxHP: 120, hp: 120 },
+        { sprite: spriteFiles[Math.floor(Math.random()*spriteFiles.length)], maxHP: 120, hp: 120 },
+        { sprite: spriteFiles[Math.floor(Math.random()*spriteFiles.length)], maxHP: 120, hp: 120 }
+    ];
 
-    /* --------------------
-       UI Update Functions
-    -------------------- */
+    let currentPlayer = 0;
+    let currentEnemy  = 0;
+
+    // ====== ENERGY SYSTEM ======
+    let energy = 3;
+    const maxEnergy = 10;
+
+    // ====== UI ELEMENTS (already in your game) ======
+    const playerSprite = document.getElementById("playerSprite");
+    const oppSprite     = document.getElementById("oppSprite");
+
+    const playerHPBar   = document.getElementById("playerHP");
+    const enemyHPBar    = document.getElementById("oppHP");
+    const playerHPText  = document.getElementById("playerHPText");
+    const enemyHPText   = document.getElementById("oppHPText");
+
+    const skillCards    = document.getElementById("skillCards");
+    const skipBtn       = document.getElementById("skipTurnBtn");
+    const forfeitBtn    = document.getElementById("forfeitBtn");
+
+    const damageLayer   = document.getElementById("damageLayer");
+
+    const energyDots    = document.getElementById("energyDots");
+    const energyCount   = document.getElementById("energyCount");
+
+    //////////////////////////////////////////////////////////////
+    // UI UPDATE HELPERS
+    //////////////////////////////////////////////////////////////
+
+    function updateSprites() {
+        playerSprite.src = `pokeSprites/${playerTeam[currentPlayer].sprite}`;
+        oppSprite.src = `pokeSprites/${enemyTeam[currentEnemy].sprite}`;
+        updateHP();
+    }
+
+    function updateHP() {
+        const p = playerTeam[currentPlayer];
+        const e = enemyTeam[currentEnemy];
+
+        playerHPBar.style.width = (p.hp / p.maxHP * 100) + "%";
+        enemyHPBar.style.width  = (e.hp / e.maxHP * 100) + "%";
+
+        playerHPText.textContent = `${p.hp} / ${p.maxHP}`;
+        enemyHPText.textContent  = `${e.hp} / ${e.maxHP}`;
+    }
+
     function updateEnergy() {
         energyDots.innerHTML = "";
-        for (let i = 0; i < state.energy; i++) {
+
+        for (let i = 0; i < energy; i++) {
             const dot = document.createElement("div");
             dot.classList.add("energyDot");
             energyDots.appendChild(dot);
         }
-        energyCount.textContent = `${state.energy} / ${state.maxEnergy}`;
+
+        energyCount.textContent = `${energy} / ${maxEnergy}`;
+
+        refreshCardStates();
     }
 
-    function updateHP() {
-        const p = (state.playerHP / state.maxHP) * 100;
-        const o = (state.oppHP / state.maxHP) * 100;
-
-        playerHPBar.style.width = p + "%";
-        oppHPBar.style.width = o + "%";
-
-        playerHPText.textContent = `${state.playerHP} / ${state.maxHP}`;
-        oppHPText.textContent = `${state.oppHP} / ${state.maxHP}`;
-    }
-
-    function showDamage(target, amount) {
-        const txt = document.createElement("div");
-        txt.classList.add("damageText");
-        txt.textContent = `-${amount}`;
-
-        const rect = target.getBoundingClientRect();
-        txt.style.left = rect.left + rect.width/2 + "px";
-        txt.style.top = rect.top + "px";
-
-        damageLayer.appendChild(txt);
-        setTimeout(()=>txt.remove(), 1000);
-    }
-
-    /* --------------------
-       Skill Cards
-    -------------------- */
-    function loadSkillCards() {
-        skillCards.innerHTML = "";
-
-        skills.forEach((skill, i) => {
-            const card = document.createElement("div");
-            card.classList.add("skill-card");
-
-            card.innerHTML = `
-                <div class="skill-name">${skill.name}</div>
-                <div class="skill-cost">⚡ ${skill.cost}</div>
-            `;
-
-            card.onclick = () => useSkill(skill);
-
-            skillCards.appendChild(card);
-        });
-
-        refreshSkillStates();
-    }
-
-    function refreshSkillStates() {
-        [...skillCards.children].forEach((card, idx) => {
-            const skill = skills[idx];
-            if (state.energy < skill.cost) {
+    function refreshCardStates() {
+        [...skillCards.children].forEach(card => {
+            const cost = Number(card.dataset.cost);
+            if (energy < cost) {
                 card.classList.add("disabled");
             } else {
                 card.classList.remove("disabled");
@@ -217,105 +222,210 @@ function createBattle(playerSpriteFile, opponent) {
         });
     }
 
-    /* --------------------
-       Player Skill Use
-    -------------------- */
-    function useSkill(skill) {
-        if (!state.running || state.turn !== "player") return;
-        if (state.energy < skill.cost) return;
+    // Floating damage numbers
+    function showDamage(target, text) {
+        const dm = document.createElement("div");
+        dm.classList.add("damageText");
+        dm.textContent = text;
 
-        state.energy -= skill.cost;
-        updateEnergy();
-        refreshSkillStates();
+        const rect = target.getBoundingClientRect();
+        dm.style.left = (rect.left + rect.width / 2) + "px";
+        dm.style.top  = (rect.top - 10) + "px";
 
-        // Damage opponent
-        state.oppHP -= skill.dmg;
-        if (state.oppHP < 0) state.oppHP = 0;
+        damageLayer.appendChild(dm);
+        setTimeout(() => dm.remove(), 2000);
+    }
 
-        showDamage(oppSprite, skill.dmg);
-        updateHP();
+    //////////////////////////////////////////////////////////////
+    // SKILL / CARDS
+    //////////////////////////////////////////////////////////////
 
-        if (state.oppHP <= 0) {
-            return endBattle("win");
+    function generateCards() {
+        const names = ["Horn Jab", "Leaf Burst", "Wing Smash", "Shell Bash", "Quill Strike"];
+
+        const cards = [];
+
+        for (let i = 0; i < 3; i++) {
+            cards.push({
+                name: names[Math.floor(Math.random()*names.length)],
+                dmg: Math.floor(25 + Math.random()*55),
+                cost: Math.floor(1 + Math.random()*3) // 1–3 energy
+            });
         }
 
-        // Opponent’s turn
-        state.turn = "opponent";
-        setTimeout(opponentTurn, 800);
+        return cards;
     }
 
-    /* --------------------
-       Opponent AI
-    -------------------- */
-    function opponentTurn() {
-        if (!state.running) return;
+    function renderCards() {
+        skillCards.innerHTML = "";
+        const cards = generateCards();
 
-        const dmg = 10 + Math.floor(Math.random()*18);
-        state.playerHP -= dmg;
-        if (state.playerHP < 0) state.playerHP = 0;
+        cards.forEach(skill => {
+            const card = document.createElement("div");
+            card.classList.add("skill-card");
+            card.dataset.cost = skill.cost;
 
-        showDamage(playerSprite, dmg);
+            card.innerHTML = `
+                <div class="skill-name">${skill.name}</div>
+                <div class="skill-cost">⚡ ${skill.cost} • Dmg: ${skill.dmg}</div>
+            `;
+
+            card.onclick = () => playerAttack(skill);
+            skillCards.appendChild(card);
+        });
+
+        refreshCardStates();
+    }
+
+    //////////////////////////////////////////////////////////////
+    // PLAYER ATTACK TURN
+    //////////////////////////////////////////////////////////////
+
+    function playerAttack(skill) {
+        const enemy = enemyTeam[currentEnemy];
+
+        // Not enough energy
+        if (energy < skill.cost) return;
+
+        // Spend energy
+        energy -= skill.cost;
+        updateEnergy();
+
+        let damage = skill.dmg;
+
+        // 10% MISS
+        if (Math.random() <= 0.20) {
+            showDamage(oppSprite, "MISS");
+            return setTimeout(enemyAttack, 3000);
+        }
+
+        // 1% CRITICAL — double damage
+        if (Math.random() <= 0.015) {
+            damage *= 2;
+            showDamage(oppSprite, "CRIT!");
+        }
+
+        enemy.hp -= damage;
+        if (enemy.hp < 0) enemy.hp = 0;
+
+        showDamage(oppSprite, `-${damage}`);
         updateHP();
 
-        if (state.playerHP <= 0) return endBattle("lose");
+        // Enemy fainted
+        if (enemy.hp <= 0) {
+            currentEnemy++;
 
-        // End → back to player turn
-        state.energy = Math.min(state.energy + 1, state.maxEnergy);
-        updateEnergy();
-        refreshSkillStates();
+            // All enemy down → victory
+            if (currentEnemy >= enemyTeam.length) {
+                return endBattle("win");
+            }
 
-        state.turn = "player";
+            updateSprites();
+        }
+
+        setTimeout(enemyAttack, 3000)
     }
 
-    /* --------------------
-       Skip Turn
-    -------------------- */
-    skipTurnBtn.onclick = () => {
-        state.energy = Math.min(state.energy + 2, state.maxEnergy);
+    //////////////////////////////////////////////////////////////
+    // ENEMY ATTACK
+    //////////////////////////////////////////////////////////////
 
+    function enemyAttack() {
+
+        const player = playerTeam[currentPlayer];
+
+        let dmg = Math.floor(25 + Math.random()*60);
+
+        // MISS
+        if (Math.random() <= 0.20) {
+            showDamage(playerSprite, "MISS");
+            return nextTurn();
+        }
+
+        // CRITICAL
+        if (Math.random() <= 0.015) {
+            dmg *= 2;
+            showDamage(playerSprite, "CRIT!");
+        }
+
+        player.hp -= dmg;
+        if (player.hp < 0) player.hp = 0;
+
+        showDamage(playerSprite, `-${dmg}`);
+        updateHP();
+
+        // Player fainted
+        if (player.hp <= 0) {
+            currentPlayer++;
+
+            // All player fainted → defeat
+            if (currentPlayer >= playerTeam.length) {
+                return endBattle("lose");
+            }
+
+            updateSprites();
+        }
+
+        nextTurn();
+    }
+
+    //////////////////////////////////////////////////////////////
+    // TURN TRANSITION
+    //////////////////////////////////////////////////////////////
+
+    function nextTurn() {
+        // Enemy turn replenishes 1 energy
+        energy = Math.min(maxEnergy, energy + 1);
         updateEnergy();
-        refreshSkillStates();
+        renderCards();
+    }
 
-        state.turn = "opponent";
-        setTimeout(opponentTurn, 600);
+    //////////////////////////////////////////////////////////////
+    // BUTTONS: KEEP YOURS
+    //////////////////////////////////////////////////////////////
+
+    skipBtn.onclick = () => {
+        // Skip gives +1 energy
+        energy = Math.min(maxEnergy, energy + 1);
+        updateEnergy();
+        enemyAttack();
     };
 
-    /* --------------------
-       Forfeit
-    -------------------- */
     forfeitBtn.onclick = () => {
         endBattle("lose");
     };
 
-    /* --------------------
-       End Battle
-    -------------------- */
-    function endBattle(result) {
-        state.running = false;
+    //////////////////////////////////////////////////////////////
+    // END MATCH
+    //////////////////////////////////////////////////////////////
 
-        battleOverlay.setAttribute("aria-hidden","true");
+    function endBattle(state) {
+        battleOverlay.setAttribute("aria-hidden", "true");
 
-        const w = document.getElementById("winnerOverlay");
+        const winnerOverlay = document.getElementById("winnerOverlay");
         const title = document.getElementById("winnerTitle");
         const sprite = document.getElementById("winnerSprite");
 
-        sprite.style.maxHeight = "200px"; // Winner size D fix
+        sprite.style.maxHeight = "300px"; // Winner size D fix
 
-        if (result === "win") {
+        if (state === "win") {
             title.textContent = "YOU WIN!";
-            sprite.src = `pokeSprites/${playerSpriteFile}`;
+            sprite.src = `pokeSprites/${playerTeam[0].sprite}`;
         } else {
             title.textContent = "YOU LOSE!";
-            sprite.src = `pokeSprites/${opponent.sprite}`;
+            sprite.src = `pokeSprites/${enemyTeam[0].sprite}`;
         }
 
-        w.setAttribute("aria-hidden","false");
+        winnerOverlay.setAttribute("aria-hidden", "false");
     }
 
-    /* Start battle! */
-    updateHP();
+    //////////////////////////////////////////////////////////////
+    // START BATTLE
+    //////////////////////////////////////////////////////////////
+
+    updateSprites();
     updateEnergy();
-    loadSkillCards();
+    renderCards();
 }
 
 
@@ -462,7 +572,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const findMatchBtn = document.getElementById("find-match");
     const pokeSprites = document.getElementById("poke-sprites");
-    const collections = document.getElementById("collections");
+    const achievements = document.getElementById("achievements");
     const settingsBtn = document.getElementById("settings");
 
     const audioPanel = document.getElementById("audioSettingsPanel");
@@ -494,8 +604,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const vsPlayerName = document.getElementById("vsPlayerName");
     const vsOppName = document.getElementById("vsOppName");
 
-    const battleOverlay = document.getElementById("battleOverlay");
-
     const winnerOverlay = document.getElementById("winnerOverlay");
     const winnerLobbyBtn = document.getElementById("winnerLobbyBtn");
     const winnerRematchBtn = document.getElementById("winnerRematchBtn");
@@ -510,9 +618,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     winnerRematchBtn.addEventListener("click", () => {
         winnerOverlay.setAttribute("aria-hidden", "true");
-
         // start a fresh battle with same settings
-        const playerSprite = spriteFiles[0]; // replace if dynamic
+        document.getElementById("battleOverlay").setAttribute("aria-hidden", "false");
+
+
+       const playerSprite = document.getElementById("playerSprite").src.split("/").pop();
         createBattle(playerSprite, lastOpponentUsed);
     });
 
@@ -570,7 +680,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loadAllSprites();
     });
 
-    collections.addEventListener("click", (e) => {
+    achievements.addEventListener("click", (e) => {
         e.preventDefault();
         showStatus("🏆 Opening Collections...");
     });
@@ -659,7 +769,8 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             onFound: (opp) => {
                 currentOpponent = opp;
-                // Immediately transition to VS splash (no accept/decline)
+                lastOpponentUsed = opp;
+
                 closeMatchOverlay();
                 startVsSplash();
             },
