@@ -34,8 +34,37 @@
         <div>
             <img id="battleArena" class="battle-arena" src="backgrounds/lobby-bg.jpg" alt="battle-arena">
             <div id="pokeSpritesPanel" class="sprites-panel">
-                <h2>Pokémon Sprites</h2>
-                <div id="spritesContainer" class="sprites-grid"></div>
+                <div id="pokemonSelectionContainer">
+
+                    <!-- Center INFO -->
+                        <h3 id="infoName">—</h3>
+                        <p id="infoType"></p>
+                    <div id="pokemonInfoPanel">
+                        <img id="infoSprite" src="" />
+                        <p id="infoHP"> HP: —</p>
+                        <p id="infoAtk"> ATK: —</p>
+                        <p id="infoDef"> DEF: —</p>
+
+                        <button id="viewDetailsBtn" class="option-btn details-btn" style="margin-top:10px;">
+                            View Details
+                        </button>
+                    </div>
+
+                    <!-- RIGHT – Slider -->
+                    <div id="pokemonSliderPanel">
+                        <button id="prevPokemon" class="sliderBtn">⯇</button>
+
+                        <img id="sliderSprite" src="" />
+
+                        <button id="nextPokemon" class="sliderBtn">⯈</button>
+                    </div>
+                </div>
+                <div id="skillsPanel" class="details-panel" style="display:none;">
+                    <h2>Skills</h2>
+                    <div id="skillsList"></div>
+                    <button id="closeSkills" class="option-btn" style="margin-top:10px;">Close</button>
+                </div>
+
             </div>
         </div>
         
@@ -44,25 +73,25 @@
             <div class="btns play-btn">
                 <a href="#" id="find-match">⚔️ Play</a>
             </div>    
-            <div class="btns">
+            <div class="btns" id="poke-sprites">
                 <span class="icon">🐾</span>
-                <a href="#" id="poke-sprites">Sprites</a>
+                <a href="#" >Sprites</a>
             </div>
-            <div class="btns">
+            <div class="btns" id="achievements">
                 <span class="icon">🥇</span>
-                <a href="#" id="achievements">Achievements</a>
+                <a href="#" >Achievements</a>
             </div>
-            <div class="btns">
+            <div class="btns" id="leaderboards">
                 <span class="icon">🏆</span>
-                <a href="#" id="leaderboards">Leaderboards</a>
+                <a href="#" >Leaderboards</a>
             </div>
-            <div class="btns">
+            <div class="btns" id="inventory">
                 <span class="icon">💼</span>
-                <a href="#" id="inventory">Inventory</a>
+                <a href="#" >Inventory</a>
             </div>
-            <div class="btns">
-                <span class="icon">⚒️</span>
-                <a href="#" id="craft">Craft</a>
+            <div class="btns" id="craft">
+                <span class="icon">⚒️</span>    
+                <a href="#" >Craft</a>
             </div>
             <div class="btns team-power">
                 <span class="power">150</span>
@@ -224,7 +253,6 @@
     <audio id="victorySound" src="audio-track/victory-theme.mp3"></audio>
     <audio id="defeatSound" src="audio-track/defeat-theme.mp3"></audio> 
 
-    <script src="script/pokemonData.js"></script>
     <script src="script/lobby.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
