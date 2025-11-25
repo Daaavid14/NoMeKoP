@@ -1092,26 +1092,37 @@ a, button {
 
 
 #pokemonSelectionContainer {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  left: 7%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 #pokemonInfoPanel {
+  background-color: #003755;
+  position: absolute;
+  top: 25%;
   justify-content: center;
   word-spacing: 10px;
   background: url("/backgrounds/") ;
 }
 
 #infoName {
-  display: flex;
+  margin-top: 70px;
   text-align: center;
+  font-size: 40px;
   justify-content: center;
   align-items: center;
-  left: 53%;
-  top: 10%;
+}
+
+#infoType {
+  margin-top: 300px;
+  text-align: center;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 #pokemonSliderPanel {

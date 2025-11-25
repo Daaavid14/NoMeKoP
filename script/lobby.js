@@ -1550,9 +1550,9 @@ function setLobbyStatus(msg) {
       // LEFT side info
       document.getElementById("infoName").textContent = p?.name || "---";
       document.getElementById("infoType").textContent = "" + (p?.type || "");
-      document.getElementById("infoHP").textContent = " HP:" + (p?.hp || "--");
-      document.getElementById("infoAtk").textContent = "ATK:" + (p?.atk || "--");
-      document.getElementById("infoDef").textContent = "DEF:" + (p?.def || "--");
+      document.getElementById("infoHP").textContent = " HP: " + (p?.hp || "--");
+      document.getElementById("infoAtk").textContent = "ATK: " + (p?.atk || "--");
+      document.getElementById("infoDef").textContent = "DEF: " + (p?.def || "--");
   }
 
     document.getElementById("prevPokemon").addEventListener("click", () => {
