@@ -377,7 +377,7 @@ a, button {
 }
 
 #battleOverlay {
-    background: url("/backgrounds/battleground.jpg") no-repeat center !important;
+    background: url("/backgrounds/game-lobbu.jpg") no-repeat center !important;
     background-size: cover !important;
 
     background-color: rgba(0,0,0,0.45);
@@ -394,30 +394,30 @@ a, button {
     position: absolute;
     align-items: center;
     left: 18%;
-    top: 33%;
+    top: 25%;
 }
 
 .opponent-panel {
     position: absolute;
     align-items: center;
     right: 15%;
-    top: 30%;
+    top: 22%;
 }
 
 .player-meta {
   position: absolute;
   display: inline-block;
   margin: 0;
-  top: -208px;
+  top: -140px;
   left: 5px;
 }
 
 .opp-meta {
   position: absolute;
   display: inline-block;
-  flex-direction: row-reverse;
+  flex-direction: row-reverse;  
   margin: 0;
-  top: -185px;
+  top: -118px;
   right: 15px;
 }
 
@@ -1076,10 +1076,8 @@ a, button {
     overflow-y: auto;
     box-shadow: 0 0 25px cyan;
     z-index: 2;
-
-    background: url("/backgrounds/game-lobbu.jpg");
+    background: url("/backgrounds/battleground.jpg");
     background-size: cover;
-    border-radius: 24px;
     font-size: 28px;  
     font-weight: 700;
     color: white;
@@ -1094,6 +1092,7 @@ a, button {
 
 
 #pokemonSelectionContainer {
+    align-items: center;
     justify-content: center;
     display: flex;
     width: 100%;
@@ -1101,31 +1100,25 @@ a, button {
 }
 
 #pokemonInfoPanel {
-  margin: 80px 0;
-  position: absolute;
-  bottom: 5%;
-  display: flex;
+  justify-content: center;
   word-spacing: 10px;
   background: url("/backgrounds/") ;
 }
 
 #infoName {
-  position: absolute;
-  bottom: 25%;
-  right: 46%;
-}
-
-#infoType {
-  font-size: 20px;
-  bottom: 30%;
-  right: 46%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  left: 53%;
+  top: 10%;
 }
 
 #pokemonSliderPanel {
-  
     top: 20%;
+    right: 23%;
     position: fixed;
-    width: 55%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1137,7 +1130,7 @@ a, button {
     color: white;
     background: linear-gradient(#51c6ff, #1d8bff);
     border: 4px solid #0073ff;
-    padding: 10px 30px;
+    padding: 5px 15px;
     font-weight: 900;
     cursor: pointer;
     text-shadow: 
@@ -1176,7 +1169,7 @@ a, button {
 .details-btn {
   position: fixed;
   width: 25%;
-  left: 38%;
-  bottom: 5%;
+  right: 30%;
+  bottom: 11%;
 }
 

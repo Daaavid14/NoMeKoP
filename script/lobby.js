@@ -280,7 +280,7 @@ const pokemonData = {
   "Rayquaza_Mega.gif": { 
     name:"Rayquaza", 
     type:"Dragon/Flying", 
-    hp:100, atk:180, def:100, spd:115, 
+    hp:100, atk:180, def:100, spd:115,
     skills:["Sky Serpent","Celestial Storm","Tempest Shred","Dragon Scales"] 
   }
 
