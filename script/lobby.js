@@ -1543,16 +1543,7 @@ function setLobbyStatus(msg) {
   function showPokemon(i) {
       const file = spriteFiles[i];
       const p = pokemonData[file];
-
-      // RIGHT side image
-      document.getElementById("sliderSprite").src = `pokeSprites/${file}`;
-
-      // LEFT side info
-      document.getElementById("infoName").textContent = p?.name || "---";
-      document.getElementById("infoType").textContent = "" + (p?.type || "");
-      document.getElementById("infoHP").textContent = " HP: " + (p?.hp || "--");
-      document.getElementById("infoAtk").textContent = "ATK: " + (p?.atk || "--");
-      document.getElementById("infoDef").textContent = "DEF: " + (p?.def || "--");
+      
   }
 
     document.getElementById("prevPokemon").addEventListener("click", () => {
@@ -1560,10 +1551,10 @@ function setLobbyStatus(msg) {
         showPokemon(currentPokemonIndex);
     });
 
-  document.getElementById("nextPokemon").addEventListener("click", () => {
-      currentPokemonIndex = (currentPokemonIndex + 1) % spriteFiles.length;
-      showPokemon(currentPokemonIndex);
-  });
+    document.getElementById("nextPokemon").addEventListener("click", () => {
+        currentPokemonIndex = (currentPokemonIndex + 1) % spriteFiles.length;
+        showPokemon(currentPokemonIndex);
+    });
 
 
 // Expose as global if needed
@@ -1882,6 +1873,99 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("closeSkills").addEventListener("click", () => {
         document.getElementById("skillsPanel").style.display = "none";
+    });
+
+
+    let selectedTeam = []; // max 3
+    let currentSelectedSprite = null;
+
+    document.getElementById("equipBtn").addEventListener("click", () => {
+
+        if (!currentSelectedSprite) return;
+
+        // Prevent duplicates
+        if (selectedTeam.includes(currentSelectedSprite)) {
+            alert("This sprite is already equipped!");
+            return;
+        }
+
+        // Limit to 3
+        if (selectedTeam.length >= 3) {
+            alert("Maximum of 3 sprites can be equipped.");
+            return;
+        }
+
+        selectedTeam.push(currentSelectedSprite);
+        updateTeamDisplay();
+    });
+
+    function updateTeamDisplay() {
+        const slotArea = document.getElementById("teamSlots");
+        slotArea.innerHTML = "";
+
+        selectedTeam.forEach(sprite => {
+            let img = document.createElement("img");
+            img.src = "pokeSprites/" + sprite;
+            slotArea.appendChild(img);
+        });
+    }
+
+    document.getElementById("poke-sprites").addEventListener("click", () => {
+        document.getElementById("pokeSpritesPanel").style.display = "block";
+        loadSpriteList();
+    });
+
+    function loadSpriteList() {
+        const sliderSprite = document.getElementById("sliderSprite");
+
+        const spriteKeys = Object.keys(pokemonData); // your existing data source
+
+        if (spriteKeys.length === 0) {
+            console.error("No sprites found in pokemonData");
+            return;
+        }
+
+        // Always start at first sprite
+        currentIndex = 0;
+        showSprite(spriteKeys[currentIndex]);
+    }
+
+    function showSprite(spriteName) {
+        const data = pokemonData[spriteName];
+
+        if (!data) {
+            console.error("Sprite not found:", spriteName);
+            return;
+        }
+
+        // Store current selected
+        currentSelectedSprite = spriteName;
+
+        // Update slider
+        document.getElementById("sliderSprite").src = "pokeSprites/" + spriteName;
+
+        // Update text
+        document.getElementById("infoName").textContent = data.name;
+        document.getElementById("infoType").textContent = data.type;
+        document.getElementById("infoHP").textContent = "HP: " + data.hp;
+        document.getElementById("infoAtk").textContent = "ATK: " + data.atk;
+        document.getElementById("infoDef").textContent = "DEF: " + data.def;
+
+        
+    }
+
+    let currentIndex = 0;
+
+    document.getElementById("prevPokemon").addEventListener("click", () => {
+        const keys = Object.keys(pokemonData);
+        currentIndex = (currentIndex - 1 + keys.length) % keys.length;
+        showSprite(keys[currentIndex]);
+    });
+
+    document.getElementById("nextPokemon").addEventListener("click", () => {
+        const keys = Object.keys(pokemonData);
+        currentIndex = (currentIndex + 1) % keys.length;
+        showSprite(keys[currentIndex]);
     });
 
 

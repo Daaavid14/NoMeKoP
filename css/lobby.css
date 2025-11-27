@@ -182,8 +182,12 @@
 }
 
 .back-btn { 
-  top: 15%; 
+  top: 6%; 
   right: 5%; 
+}
+
+.back-btn:hover { 
+  transform: scale(1.1);
 }
 
 .back-btns { 
@@ -1093,24 +1097,29 @@ a, button {
 
 #pokemonSelectionContainer {
   position: absolute;
-  left: 7%;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
+  
+
+
 }
 
 #pokemonInfoPanel {
-  background-color: #003755;
   position: absolute;
+  font-size: 25px;
+  left: 7%;
   top: 25%;
   justify-content: center;
+  width: 20%;
   word-spacing: 10px;
-  background: url("/backgrounds/") ;
 }
 
 #infoName {
   margin-top: 70px;
+  position: relative;
+  left: 7%;
   text-align: center;
   font-size: 40px;
   justify-content: center;
@@ -1118,9 +1127,11 @@ a, button {
 }
 
 #infoType {
+  position: relative;
+  left: 7%;
   margin-top: 300px;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   justify-content: center;
   align-items: center;
 }
@@ -1174,13 +1185,44 @@ a, button {
     color:white;
     border-radius: 12px;
     border:2px solid cyan;
-    z-index: 99999;
+    z-index: 50;
 }
 
 .details-btn {
   position: fixed;
-  width: 25%;
-  right: 30%;
+  width: 15%;
+  right: 27%;
+  padding: 12px 22px;
   bottom: 11%;
+}
+/* ////////////////////////////////////////////////// */
+/* --- TEAM SLOT AREA (3 slots on lobby platform) --- */
+/* /////////////////////////////////////////////////// */
+#teamSlots {
+    position: absolute;
+    top: 8%;
+    left: 20%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+#teamSlots img {
+  gap: 20px;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.4));
+}
+
+
+/* --- EQUIP Button --- */
+#equipBtn {
+    position: fixed;
+    width: 15%;
+    left: 42%;
+    padding: 12px 22px;
+    bottom: 11%;
 }
 
