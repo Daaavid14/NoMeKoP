@@ -12,14 +12,14 @@
     <!-- ================= NAVIGATION ================= -->
     <nav class="navbar">
         <div class="logo">
-            <img src="/backgrounds/Nomekop.png" alt="Home background">
+            <img src="backgrounds/nomekop.png" alt="game logo">
         </div>
 
         <ul class="nav-links">
             <li><a href="#" id="navHome">Home</a></li>
             <li><a href="#" id="navMarketplace">Marketplace</a></li>
-            <li><a href="#">Collection</a></li>
-            <li><a href="#">Whitepaper</a></li>
+            <li><a href="#" id="navCollection">Collection</a></li>
+            <li><a href="#" id="navWhitepaper">Whitepaper</a></li>
         </ul>
 
         <button id="connectWalletBtn" class="wallet-btn">CONNECT WALLET</button>
@@ -36,16 +36,32 @@
             <h1 class="title">NOMEKOP</h1>
             <h1 class="title">BEQUEST</h1>
             <div class="hero-buttons">
-                <a href="lobby.html">
+                <a href="lobby.html" id="navPlayGames">
                     <button class="btn play">PLAY GAMES</button>
                 </a>
             </div>
-            <p class="sub-text">Train • Battle • Trade</p>
+            <p class="sub-text">Catch • Train • Battle • Trade</p>
         </div>
 
         <div class="hero-right">
             <img src="assets/kind1.png" alt="Trainer Red">
         </div>
+
+        <div id="walletPopup" class="wallet-popup" aria-hidden="true">
+        <div class="wallet-popup-backdrop"></div>
+
+        <div class="wallet-popup-panel" role="dialog" aria-modal="true">
+            <h2 class="wallet-popup-title">Connect Wallet</h2>
+            <p class="wallet-popup-message">Please connect your wallet to continue.</p>
+
+            <div class="wallet-popup-actions">
+                <button id="popupConnectBtn" class="wallet-btn wallet-btn-primary">Connect Now</button>
+                <button id="popupCloseBtn" class="wallet-btn wallet-btn-secondary">Cancel</button>
+            </div>
+
+            <div id="modalStatus" class="wallet-popup-status"></div>
+        </div>
+    </div>
 
     </header>
 
@@ -53,5 +69,14 @@
     <footer>
         <p>© 2025 Nomekop Bequest. All rights reserved.</p>
     </footer>
+
+    <!-- Wallet Required Popup -->
+    
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.8.1/dist/ethers.umd.min.js"></script>
+    <script src="script/app.js"></script>
 </body>
 </html>
