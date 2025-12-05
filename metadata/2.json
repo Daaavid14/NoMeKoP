@@ -1,0 +1,39 @@
+{
+  "name": "Aggron Mega",
+  "description": "Aggron Mega — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Aggron_Mega.gif",
+  "hp": 320,
+  "type": "Steel/Rock",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 320 },
+    { "trait_type": "ATK", "value": 140 },
+    { "trait_type": "DEF", "value": 230 },
+    { "trait_type": "SPD", "value": 50 },
+    { "trait_type": "Type", "value": "Steel/Rock" },
+
+    { "trait_type": "Skill 1 Name", "value": "Iron Bash" },
+    { "trait_type": "Skill 1 Attack", "value": 70 },
+    { "trait_type": "Skill 1 Shield", "value": 15 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "" },
+
+    { "trait_type": "Skill 2 Name", "value": "Fortress Slam" },
+    { "trait_type": "Skill 2 Attack", "value": 90 },
+    { "trait_type": "Skill 2 Shield", "value": 5 },
+    { "trait_type": "Skill 2 Cost", "value": 2 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Metal Cry" },
+    { "trait_type": "Skill 3 Attack", "value": 10 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "weaken" },
+
+    { "trait_type": "Skill 4 Name", "value": "Steel Wall" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 60 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}

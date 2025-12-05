@@ -1,0 +1,39 @@
+{
+  "name": "Scizor Mega",
+  "description": "Scizor Mega — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Scizor_Mega.gif",
+  "hp": 224,
+  "type": "Bug/Steel",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 224 },
+    { "trait_type": "ATK", "value": 150 },
+    { "trait_type": "DEF", "value": 140 },
+    { "trait_type": "SPD", "value": 75 },
+    { "trait_type": "Type", "value": "Bug/Steel" },
+
+    { "trait_type": "Skill 1 Name", "value": "Metal Slash" },
+    { "trait_type": "Skill 1 Attack", "value": 50 },
+    { "trait_type": "Skill 1 Shield", "value": 25 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "" },
+
+    { "trait_type": "Skill 2 Name", "value": "Razor Storm" },
+    { "trait_type": "Skill 2 Attack", "value": 85 },
+    { "trait_type": "Skill 2 Shield", "value": 15 },
+    { "trait_type": "Skill 2 Cost", "value": 2 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Iron Pulse" },
+    { "trait_type": "Skill 3 Attack", "value": 20 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "weaken" },
+
+    { "trait_type": "Skill 4 Name", "value": "Steel Wing Guard" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 45 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}

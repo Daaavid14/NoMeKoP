@@ -1,0 +1,39 @@
+{
+  "name": "Metagross Mega",
+  "description": "Metagross Mega — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Metagross_Mega.gif",
+  "hp": 256,
+  "type": "Steel/Psychic",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 256 },
+    { "trait_type": "ATK", "value": 145 },
+    { "trait_type": "DEF", "value": 150 },
+    { "trait_type": "SPD", "value": 110 },
+    { "trait_type": "Type", "value": "Steel/Psychic" },
+
+    { "trait_type": "Skill 1 Name", "value": "Iron Impact" },
+    { "trait_type": "Skill 1 Attack", "value": 60 },
+    { "trait_type": "Skill 1 Shield", "value": 15 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "" },
+
+    { "trait_type": "Skill 2 Name", "value": "Meteor Crush" },
+    { "trait_type": "Skill 2 Attack", "value": 90 },
+    { "trait_type": "Skill 2 Shield", "value": 5 },
+    { "trait_type": "Skill 2 Cost", "value": 2 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Psychic Crash" },
+    { "trait_type": "Skill 3 Attack", "value": 20 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "confuse" },
+
+    { "trait_type": "Skill 4 Name", "value": "Titanium Guard" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 50 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}

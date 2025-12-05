@@ -1,0 +1,39 @@
+{
+  "name": "Meganium",
+  "description": "Meganium — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Meganium.gif",
+  "hp": 256,
+  "type": "Grass",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 256 },
+    { "trait_type": "ATK", "value": 82 },
+    { "trait_type": "DEF", "value": 100 },
+    { "trait_type": "SPD", "value": 80 },
+    { "trait_type": "Type", "value": "Grass" },
+
+    { "trait_type": "Skill 1 Name", "value": "Leaf Cutter" },
+    { "trait_type": "Skill 1 Attack", "value": 45 },
+    { "trait_type": "Skill 1 Shield", "value": 22 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "" },
+
+    { "trait_type": "Skill 2 Name", "value": "Solar Crush" },
+    { "trait_type": "Skill 2 Attack", "value": 90 },
+    { "trait_type": "Skill 2 Shield", "value": 5 },
+    { "trait_type": "Skill 2 Cost", "value": 2 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Aroma Pulse" },
+    { "trait_type": "Skill 3 Attack", "value": 20 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "heal" },
+
+    { "trait_type": "Skill 4 Name", "value": "Petal Guard" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 40 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}

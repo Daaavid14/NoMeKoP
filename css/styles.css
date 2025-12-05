@@ -12,7 +12,7 @@
 }
 
 body {
-    background: url("/backgrounds/New-Background.jpg");
+    background: url("/backgrounds/new-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 50vh;
@@ -75,7 +75,7 @@ body {
 
 .wallet-btn:hover {
     background: #ffdb6e;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* ================= HERO ================= */
@@ -144,7 +144,7 @@ body {
 }
 
 .sub-text {
-    margin-top: 25px;
+    margin-top: 18px;
     font-weight: 600;
     color: white;
     font-size: 30px;
@@ -156,7 +156,7 @@ footer {
     text-align: center;
     justify-content: center;
     padding-left: 65px;
-    padding-top: 50px;
+    padding-top: 75px;
     font-weight: 600;
     text-shadow: 0px 3px 8px rgba(0,0,0,0.4) ;
     color: white;
@@ -279,4 +279,99 @@ footer {
     text-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
+/* ===========================
+   WALLET POPUP (MODAL)
+   =========================== */
+
+/* Popup root (hidden by default) */
+.wallet-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+/* When visible */
+.wallet-popup[aria-hidden="false"] {
+    display: flex;
+}
+
+/* Backdrop background blur */
+.wallet-popup-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+}
+
+/* Popup panel */
+.wallet-popup-panel {
+    position: relative;
+    z-index: 10;
+    height: 250px;
+    width: 350px;
+    max-width: 90%;
+    background: url("/pikachu.mp4");
+    opacity: 0.9;
+    color: #111;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Title */
+.wallet-popup-title {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Message */
+.wallet-popup-message {
+    margin: 0 0 18px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Buttons container */
+.wallet-popup-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+
+.wallet-btn-primary {
+    position: absolute;
+    width: 50%;
+    left: 5%;
+    bottom: 5%;
+    background: #20c060;
+    color: #ffffff;
+}
+
+.wallet-btn-secondary {
+    position: absolute;
+    width: 38%;
+    right: 5%;
+    bottom: 5%;
+    background: #e0e0e0;
+    color: #333333;
+}
+
+.wallet-btn:hover {
+    opacity: 0.9;
+}
+
+/* Status message */
+.wallet-popup-status {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #666;
+    min-height: 18px;
+}
 

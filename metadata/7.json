@@ -1,0 +1,39 @@
+{
+  "name": "Banette Mega",
+  "description": "Banette Mega — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Banette_Mega.gif",
+  "hp": 153,
+  "type": "Ghost",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 153 },
+    { "trait_type": "ATK", "value": 165 },
+    { "trait_type": "DEF", "value": 65 },
+    { "trait_type": "SPD", "value": 75 },
+    { "trait_type": "Type", "value": "Ghost" },
+
+    { "trait_type": "Skill 1 Name", "value": "Shadow Jab" },
+    { "trait_type": "Skill 1 Attack", "value": 50 },
+    { "trait_type": "Skill 1 Shield", "value": 28 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "" },
+
+    { "trait_type": "Skill 2 Name", "value": "Curse Swipe" },
+    { "trait_type": "Skill 2 Attack", "value": 75 },
+    { "trait_type": "Skill 2 Shield", "value": 15 },
+    { "trait_type": "Skill 2 Cost", "value": 2 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Dark Whim" },
+    { "trait_type": "Skill 3 Attack", "value": 20 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "curse" },
+
+    { "trait_type": "Skill 4 Name", "value": "Voodoo Guard" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 35 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}

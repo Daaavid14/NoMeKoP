@@ -1,0 +1,39 @@
+{
+  "name": "Gyarados Mega",
+  "description": "Gyarados Mega — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Gyarados_Mega.gif",
+  "hp": 304,
+  "type": "Water/Dark",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 304 },
+    { "trait_type": "ATK", "value": 155 },
+    { "trait_type": "DEF", "value": 109 },
+    { "trait_type": "SPD", "value": 81 },
+    { "trait_type": "Type", "value": "Water/Dark" },
+
+    { "trait_type": "Skill 1 Name", "value": "Aqua Bite" },
+    { "trait_type": "Skill 1 Attack", "value": 55 },
+    { "trait_type": "Skill 1 Shield", "value": 28 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "" },
+
+    { "trait_type": "Skill 2 Name", "value": "Tidal Crash" },
+    { "trait_type": "Skill 2 Attack", "value": 90 },
+    { "trait_type": "Skill 2 Shield", "value": 5 },
+    { "trait_type": "Skill 2 Cost", "value": 2 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Dark Roar" },
+    { "trait_type": "Skill 3 Attack", "value": 20 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "fear" },
+
+    { "trait_type": "Skill 4 Name", "value": "Leviathan Guard" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 60 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}

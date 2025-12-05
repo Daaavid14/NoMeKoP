@@ -1,0 +1,39 @@
+{
+  "name": "Audino Mega",
+  "description": "Audino Mega — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Audino_Mega.gif",
+  "hp": 288,
+  "type": "Normal",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 288 },
+    { "trait_type": "ATK", "value": 60 },
+    { "trait_type": "DEF", "value": 126 },
+    { "trait_type": "SPD", "value": 50 },
+    { "trait_type": "Type", "value": "Normal" },
+
+    { "trait_type": "Skill 1 Name", "value": "Healing Pulse" },
+    { "trait_type": "Skill 1 Attack", "value": 0 },
+    { "trait_type": "Skill 1 Shield", "value": 0 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "heal" },
+
+    { "trait_type": "Skill 2 Name", "value": "Fairy Burst" },
+    { "trait_type": "Skill 2 Attack", "value": 40 },
+    { "trait_type": "Skill 2 Shield", "value": 28 },
+    { "trait_type": "Skill 2 Cost", "value": 1 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Soothing Cry" },
+    { "trait_type": "Skill 3 Attack", "value": 0 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "cleanse" },
+
+    { "trait_type": "Skill 4 Name", "value": "Barrier Glow" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 50 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}

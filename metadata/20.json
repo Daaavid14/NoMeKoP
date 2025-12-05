@@ -1,0 +1,39 @@
+{
+  "name": "Houndoom Mega",
+  "description": "Houndoom Mega — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Houndoom_Mega.gif",
+  "hp": 210,
+  "type": "Dark/Fire",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 210 },
+    { "trait_type": "ATK", "value": 140 },
+    { "trait_type": "DEF", "value": 90 },
+    { "trait_type": "SPD", "value": 115 },
+    { "trait_type": "Type", "value": "Dark/Fire" },
+
+    { "trait_type": "Skill 1 Name", "value": "Dark Fang" },
+    { "trait_type": "Skill 1 Attack", "value": 55 },
+    { "trait_type": "Skill 1 Shield", "value": 28 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "" },
+
+    { "trait_type": "Skill 2 Name", "value": "Infernal Rush" },
+    { "trait_type": "Skill 2 Attack", "value": 85 },
+    { "trait_type": "Skill 2 Shield", "value": 15 },
+    { "trait_type": "Skill 2 Cost", "value": 2 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Hell Pulse" },
+    { "trait_type": "Skill 3 Attack", "value": 20 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "burn" },
+
+    { "trait_type": "Skill 4 Name", "value": "Demon Guard" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 40 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}

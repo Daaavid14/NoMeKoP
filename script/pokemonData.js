@@ -1,3 +1,264 @@
+const pokemonData = {
+  "Abomasnow_Mega.gif": { 
+    name:"Abomasnow", 
+    type:"🌱Grass  ❄️Ice",
+    hp:100, atk:132, def:105, spd:30, 
+    skills:["Icy Vine","Avalanche Toss","Frostbite Spore","Gaia Guard"] 
+  },
+  "Aerodactyl_Mega.gif": { 
+    name:"Aerodactyl", 
+    type:"Rock / Flying", 
+    hp:100, atk:135, def:85, spd:150, 
+    skills:["Stone Peck","Sky Crush","Wing Gust","Rocky Shell"] 
+  },
+  "Aggron_Mega.gif": { 
+    name:"Aggron", 
+    type:"Steel", 
+    hp:100, atk:140, def:230, spd:50, 
+    skills:["Steel Charge","Iron Slam","Rust Spray","Heavy Barrier"] 
+  },
+  "Alakazam_Mega.gif": { 
+    name:"Alakazam", 
+    type:"Psychic", 
+    hp:100, atk:50, def:65, spd:150, 
+    skills:["Psy Jab","Mind Lance","Confuse Ray","Reflex Veil"] 
+  },
+  "Altaria_Mega.gif": { 
+    name:"Altaria", 
+    type:"Dragon/Fairy", 
+    hp:100, atk:110, def:110, spd:80, 
+    skills:["Dragon Note","Heavenly Roost","Serene Song","Cloud Shield"] 
+  },
+  "Ampharos_Mega.gif": { 
+    name:"Ampharos", 
+    type:"Electric/Dragon", 
+    hp:100, atk:95, def:105, spd:45, 
+    skills:["Spark Tail","Dragon Bolt","Static Field","Volt Guard"] 
+  },
+  "Audino_Mega.gif": { 
+    name:"Audino", 
+    type:"Normal/Fairy", 
+    hp:100, atk:60, def:126, spd:50, 
+    skills:["Comfort Punch","Healing Chorus","Warm Embrace","Guardian Ward"] 
+  },
+  "Banette_Mega.gif": { 
+    name:"Banette", 
+    type:"Ghost", 
+    hp:100, atk:165, def:75, spd:75, 
+    skills:["Hex Snap","Curse Grasp","Phantom Spores","Doll Shroud"] 
+  },
+  "Beedrill_Mega.gif": { 
+    name:"Beedrill", 
+    type:"Bug/Poison", 
+    hp:100, atk:150, def:40, spd:145, 
+    skills:["Stinger Jab","Venom Blitz","Toxic Spray","Swarm Cover"] 
+  },
+  "Blastoise_Mega.gif": { 
+    name:"Blastoise", 
+    type:"Water", 
+    hp:100, atk:103, def:120, spd:78, 
+    skills:["Aqua Bash","Hydro Cannon","Soaking Mist","Shell Fortify"] 
+  },
+  "Blaziken_Mega.gif": { 
+    name:"Blaziken", 
+    type:"Fire/Fighting", 
+    hp:100, atk:160, def:80, spd:100, 
+    skills:["Flare Kick","Phoenix Rush","Scorching Feint","Battle Focus"] 
+  },
+  "Camerupt_Mega.gif": { 
+    name:"Camerupt", 
+    type:"Fire/Ground", 
+    hp:100, atk:120, def:100, spd:20, 
+    skills:["Magma Slam","Volcanic Spike","Eruption Ash","Earthen Bulwark"] 
+  },
+  "Charizard_MegaY.gif": { 
+    name:"Charizard", 
+    type:"Fire/Flying", 
+    hp:100, atk:104, def:78, spd:100, 
+    skills:["Solar Flare","Sky Inferno","Heat Haze","Flame Guard"] 
+  },
+  "Diancie_Mega.gif": { 
+    name:"Diancie", 
+    type:"Rock/Fairy", 
+    hp:100, atk:160, def:160, spd:110, 
+    skills:["Crystal Jab","Prismatic Burst","Sparkling Lure","Diamond Wall"] 
+  },
+  "Gallade_Mega.gif": { 
+    name:"Gallade", 
+    type:"Psychic/Fighting", 
+    hp:100, atk:165, def:95, spd:110, 
+    skills:["Psych Blade","Knight Slash","Mind Rend","Valor Guard"] 
+  },
+  "Garchomp_Mega.gif": { 
+    name:"Garchomp", 
+    type:"Dragon/Ground", 
+    hp:100, atk:170, def:115, spd:95, 
+    skills:["Sand Fang","Earth Dragon","Grounded Roar","Scale Barrier"] 
+  },
+  "Gardevoir_Mega.gif": { 
+    name:"Gardevoir", 
+    type:"Psychic/Fairy", 
+    hp:100, atk:85, def:95, spd:100, 
+    skills:["Moon Pulse","Heartbreak Wave","Lullaby Veil","Ethereal Guard"] 
+  },
+  "Gengar_Mega.gif": { 
+    name:"Gengar", 
+    type:"Ghost/Poison",
+    hp:100, atk:65, def:100, spd:130, 
+    skills:["Shadow Jab","Nightmare Burst","Toxic Haunt","Wraith Veil"] 
+    },
+  "Glalie_Mega.gif": { 
+    name:"Glalie", 
+    type:"❄️Ice", 
+    hp:100, atk:120, def:80, spd:100,
+    skills:["Ice Shard","Frozen Crater","Hail Mist","Frost Armor"] 
+    },
+  "Gyarados_Mega.gif": { 
+    name:"Gyarados",
+    type:"Water/Dark", 
+    hp:100, atk:155, def:109, spd:81, 
+    skills:["Raging Bite","Tidal Maelstrom","Fury Roar","Dragonhide"] 
+  },
+  "Houndoom_Mega.gif": { 
+    name:"Houndoom", 
+    type:"Dark/Fire", 
+    hp:100, atk:90, def:90, spd:115, 
+    skills:["Searing Fang","Hellfire Howl","Curse Smoke","Infernal Coat"] 
+  },
+  "Heracross_Mega.gif": { 
+    name:"Heracross", 
+    type:"Bug/Fighting", 
+    hp:100, atk:185, def:115, spd:75, 
+    skills:["Horn Tackle","Giga Crush","Beetle Charge","Juggernaut Guard"] 
+  },
+  "Kangaskhan_Mega.gif": { 
+    name:"Kangaskhan", 
+    type:"Normal", 
+    hp:100, atk:125, def:100, spd:100, 
+    skills:["Parent Pound","Double Nap","Protective Hug","Mama Shield"] 
+  },
+  "Latios_Mega.gif": { 
+    name:"Latios", 
+    type:"Dragon/Psychic", 
+    hp:100, atk:130, def:100, spd:110, 
+    skills:["Psy Wing","Luminous Beam","Lucid Drift","Aerial Ward"] 
+  },
+  "Lopunny_Mega.gif": { 
+    name:"Lopunny", 
+    type:"Normal/Fighting", 
+    hp:100, atk:136, def:94, spd:135, 
+    skills:["Quick Jab","Blitz Kick","Graceful Dodge","Fury Guard"] 
+  },
+  "Lucario_Mega.gif": { 
+    name:"Lucario", 
+    type:"Fighting/Steel", 
+    hp:100, atk:145, def:88, spd:112, 
+    skills:["Aura Strike","Steel Pulse","Focus Surge","Iron Aegis"] 
+  },
+  "Manectric_Mega.gif": { 
+    name:"Manectric", 
+    type:"Electric", 
+    hp:100, atk:85, def:80, spd:135, 
+    skills:["Spark Fang","Lightning Storm","Charge Field","Conductive Shell"] 
+  },
+  "Mawile_Mega.gif": { 
+    name:"Mawile", 
+    type:"Steel/Fairy", 
+    hp:100, atk:150, def:125, spd:50, 
+    skills:["Bite Illusion","Titan Maw","Confounding Smile","Steel Bloom"] 
+  },
+  "Medicham_Mega.gif": { 
+    name:"Medicham", 
+    type:"Fighting/Psychic", 
+    hp:100, atk:150, def:75, spd:100, 
+    skills:["Meditative Punch","Mind-Body Smash","Zen Focus","Spirit Guard"] 
+  },
+  "Meganium.gif": { 
+    name:"Meganium", 
+    type:"🌱Grass", 
+    hp:100, atk:82, def:100, spd:80, 
+    skills:["Leaf Whip","Solar Beam","Aromatic Breeze","Vine Shield"] 
+  },
+  "Metagross_Mega.gif": { 
+    name:"Metagross", 
+    type:"Steel/Psychic", 
+    hp:100, atk:170, def:150, spd:110, 
+    skills:["Steel Punch","Titan Crash","Magnetize","Adamant Guard"] 
+  },
+  "Mewtwo_MegaX.gif": { 
+    name:"Mewtwo", 
+    type:"Psychic/Fighting", 
+    hp:100, atk:190, def:100, spd:130, 
+    skills:["Psy Fist","Mega Overdrive","Mind Break","Psi Barrier"] 
+  },
+  "Pidgeot_Mega.gif": { 
+    name:"Pidgeot", 
+    type:"Normal/Flying", 
+    hp:100, atk:80, def:80, spd:121, 
+    skills:["Gale Slash","Hurricane Dive","Aerial Push","Feather Guard"] 
+  },
+  "Pinsir_Mega.gif": { 
+    name:"Pinsir", 
+    type:"Bug/Flying", 
+    hp:100, atk:155, def:120, spd:105, 
+    skills:["Spiral Horn","Sky Chopper","Winged Roar","Chitin Shield"] 
+  },
+  "Sceptile_Mega.gif": { 
+    name:"Sceptile", 
+    type:"🌱Grass/Dragon", 
+    hp:100, atk:110, def:75, spd:145, 
+    skills:["Leaf Slice","Dragon Thorn","Root Bind","Camouflage Guard"] 
+  },
+  "Sableye_Mega.gif": { 
+    name:"Sableye", 
+    type:"Dark/Ghost",
+    hp:100, atk:85, def:125, spd:20, 
+    skills:["Shadow Claw","Night Trick","Mischief Hex","Eerie Shell"] 
+  },
+  "Scizor_Mega.gif": { 
+    name:"Scizor", 
+    type:"Bug/Steel", 
+    hp:100, atk:150, def:140, spd:75, 
+    skills:["Pincer Strike","Steel Assault","Precision Cut","Blade Guard"] 
+  },
+  "Sharpedo_Mega.gif": { 
+    name:"Sharpedo", 
+    type:"Water/Dark", hp:100, atk:140, def:70, spd:105, 
+    skills:["Razor Surge","Abyssal Bite","Blood Frenzy","Hydro Skin"] 
+  },
+  "Swampert_Mega.gif": { 
+    name:"Swampert", 
+    type:"Water/Ground", 
+    hp:100, atk:150, def:110, spd:70, 
+    skills:["Mud Slam","Tsunami Crush","Quagmire","Earth Bulwark"] 
+  },
+  "Steelix_Mega.gif": { 
+    name:"Steelix", 
+    type:"Steel/Ground", 
+    hp:100, atk:125, def:230, spd:30, 
+    skills:["Iron Coil","Seismic Rupture","Gravel Spit","Titan Wall"] 
+  },
+  "Tyranitar_Mega.gif": { 
+    name:"Tyranitar", 
+    type:"Rock/Dark", 
+    hp:100, atk:165, def:150, spd:71, 
+    skills:["Sand Crush","Ravager Strike","Dark Howl","Obsidian Guard"] 
+  },
+  "Venusaur_Mega.gif": { 
+    name:"Venusaur", 
+    type:"🌱Grass/Poison", 
+    hp:100, atk:100, def:123, spd:80, 
+    skills:["Vine Lash","Toxic Bloom","Spore Cloud","Thorn Aegis"] 
+  },
+  "Rayquaza_Mega.gif": { 
+    name:"Rayquaza", 
+    type:"Dragon/Flying", 
+    hp:100, atk:180, def:100, spd:115,
+    skills:["Sky Serpent","Celestial Storm","Tempest Shred","Dragon Scales"] 
+  }
+
+}
+
 const pokemonDB = [
   {
     sprite: "Abomasnow_Mega.gif",

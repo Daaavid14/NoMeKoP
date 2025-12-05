@@ -1,0 +1,39 @@
+{
+  "name": "Diancie Mega",
+  "description": "Diancie Mega — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Diancie_Mega.gif",
+  "hp": 160,
+  "type": "Rock/Fairy",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 160 },
+    { "trait_type": "ATK", "value": 160 },
+    { "trait_type": "DEF", "value": 110 },
+    { "trait_type": "SPD", "value": 110 },
+    { "trait_type": "Type", "value": "Rock/Fairy" },
+
+    { "trait_type": "Skill 1 Name", "value": "Gem Burst" },
+    { "trait_type": "Skill 1 Attack", "value": 55 },
+    { "trait_type": "Skill 1 Shield", "value": 28 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "" },
+
+    { "trait_type": "Skill 2 Name", "value": "Diamond Lance" },
+    { "trait_type": "Skill 2 Attack", "value": 85 },
+    { "trait_type": "Skill 2 Shield", "value": 15 },
+    { "trait_type": "Skill 2 Cost", "value": 2 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Radiant Cry" },
+    { "trait_type": "Skill 3 Attack", "value": 10 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "strengthen" },
+
+    { "trait_type": "Skill 4 Name", "value": "Prism Guard" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 50 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}

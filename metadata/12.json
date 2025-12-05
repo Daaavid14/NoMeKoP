@@ -1,0 +1,39 @@
+{
+  "name": "Charizard Mega Y",
+  "description": "Charizard Mega Y — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Charizard_Mega_Y.gif",
+  "hp": 218,
+  "type": "Fire/Flying",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 218 },
+    { "trait_type": "ATK", "value": 104 },
+    { "trait_type": "DEF", "value": 78 },
+    { "trait_type": "SPD", "value": 100 },
+    { "trait_type": "Type", "value": "Fire/Flying" },
+
+    { "trait_type": "Skill 1 Name", "value": "Fire Wing" },
+    { "trait_type": "Skill 1 Attack", "value": 50 },
+    { "trait_type": "Skill 1 Shield", "value": 28 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "" },
+
+    { "trait_type": "Skill 2 Name", "value": "Sunburst Ray" },
+    { "trait_type": "Skill 2 Attack", "value": 95 },
+    { "trait_type": "Skill 2 Shield", "value": 5 },
+    { "trait_type": "Skill 2 Cost", "value": 2 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Blaze Pulse" },
+    { "trait_type": "Skill 3 Attack", "value": 20 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "burn" },
+
+    { "trait_type": "Skill 4 Name", "value": "Solar Shield" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 35 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}

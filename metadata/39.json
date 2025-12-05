@@ -1,0 +1,39 @@
+{
+  "name": "Steelix Mega",
+  "description": "Steelix Mega — NFT Pokémon with Axie-style stats.",
+  "image": "./pokeSprites/Steelix_Mega.gif",
+  "hp": 240,
+  "type": "Steel/Ground",
+
+  "attributes": [
+    { "trait_type": "HP", "value": 240 },
+    { "trait_type": "ATK", "value": 125 },
+    { "trait_type": "DEF", "value": 230 },
+    { "trait_type": "SPD", "value": 30 },
+    { "trait_type": "Type", "value": "Steel/Ground" },
+
+    { "trait_type": "Skill 1 Name", "value": "Iron Crush" },
+    { "trait_type": "Skill 1 Attack", "value": 60 },
+    { "trait_type": "Skill 1 Shield", "value": 15 },
+    { "trait_type": "Skill 1 Cost", "value": 1 },
+    { "trait_type": "Skill 1 Effect", "value": "" },
+
+    { "trait_type": "Skill 2 Name", "value": "Earth Drill" },
+    { "trait_type": "Skill 2 Attack", "value": 80 },
+    { "trait_type": "Skill 2 Shield", "value": 15 },
+    { "trait_type": "Skill 2 Cost", "value": 2 },
+    { "trait_type": "Skill 2 Effect", "value": "" },
+
+    { "trait_type": "Skill 3 Name", "value": "Quake Pulse" },
+    { "trait_type": "Skill 3 Attack", "value": 20 },
+    { "trait_type": "Skill 3 Shield", "value": 0 },
+    { "trait_type": "Skill 3 Cost", "value": 1 },
+    { "trait_type": "Skill 3 Effect", "value": "stun" },
+
+    { "trait_type": "Skill 4 Name", "value": "Steel Fortify" },
+    { "trait_type": "Skill 4 Attack", "value": 0 },
+    { "trait_type": "Skill 4 Shield", "value": 60 },
+    { "trait_type": "Skill 4 Cost", "value": 1 },
+    { "trait_type": "Skill 4 Effect", "value": "" }
+  ]
+}
