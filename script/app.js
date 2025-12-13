@@ -63,15 +63,19 @@ document.addEventListener("DOMContentLoaded", async () => {
       const formattedEth = parseFloat(ethers.formatEther(ethBalance)).toFixed(4);
 
       // PokéCoin balance
+      // PokéCoin balance
       let pokeBal = "0";
       try {
         const pokeCoin = new ethers.Contract(POKECOIN_CONTRACT, pokeAbi, provider);
         const decimals = await pokeCoin.decimals();
         const rawBal = await pokeCoin.balanceOf(userAddress);
-        pokeBal = (Number(rawBal) / 10 ** decimals).toFixed(2);
+
+        // FIX: Use formatUnits to safely convert BigInt to readable number
+        pokeBal = parseFloat(ethers.formatUnits(rawBal, decimals)).toFixed(2);
       } catch (err) {
         console.warn("⚠️ PokéCoin contract unreachable or invalid:", err);
       }
+
 
       // ✅ Safely update UI (verify each element exists)
       if (connectBtn) {
